@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What-If – Curious Minds</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="container">
+        <h1>What-If</h1>
+        <p>Exploring mind-bending science and hypothetical questions</p>
+        <nav>
+            <a href="#featured-question">Featured Question</a>
+            <a href="#random-question">Random Question</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </div>
+</header>
+
+<!-- FEATURED QUESTION OF THE DAY -->
+<section id="featured-question">
+    <div class="container card">
+        <h2>Question of the Day</h2>
+        <p id="featuredQ">What if the Earth’s core suddenly stopped rotating?</p>
+        <button class="btn" onclick="showAnswer()">Show Answer</button>
+        <p id="featuredAnswer" style="display:none; margin-top:15px;">
+            If Earth's core stopped, the magnetic field would collapse, causing massive radiation exposure,
+            disruptions to navigation, and eventually catastrophic effects on life and atmosphere. The planet's rotation might also be affected over time.
+        </p>
+    </div>
+</section>
+
+<!-- RANDOM QUESTION SECTION -->
+<section id="random-question">
+    <div class="container card">
+        <h2>Random Question</h2>
+        <div class="random-box" id="randomBox">What if humans could breathe underwater?</div>
+        <button class="btn" onclick="nextRandom()">Next Question</button>
+    </div>
+</section>
+
+<!-- WHY STAY HERE SECTION -->
+<section id="why-stay">
+    <div class="container card">
+        <h2>Why Stay Here?</h2>
+        <ul>
+            <li>Mind-bending questions every day 🧠</li>
+            <li>Explore science in a fun way 🔬</li>
+            <li>Interactive answers hidden behind buttons 🎯</li>
+            <li>Random questions for continuous curiosity 🔀</li>
+        </ul>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+    <div class="container card">
+        <h2>Contact</h2>
+        <p>Have a question or suggestion? Click the button below:</p>
+        <button class="btn" onclick="window.location='mailto:your-email-here?subject=Curious%20Minds%20Question'">
+            Contact Us
+        </button>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>Made with ❤️ by Curious Minds</p>
+</footer>
+
+<!-- JAVASCRIPT -->
+<script>
+    // Random question array
+    const randomQuestions = [
+        "What if humans could breathe underwater?",
+        "What if the Earth had no tilt?",
+        "What if all ice on Earth melted instantly?",
+        "What if the Sun disappeared?",
+        "What if gravity stopped for 5 seconds?",
+        "What if animals could talk to each other?",
+        "What if the Moon disappeared overnight?",
+        "What if humans could teleport randomly?",
+        "What if the speed of light was 1/10th?"
+    ];
+
+    // Show next random question
+    function nextRandom() {
+        const box = document.getElementById("randomBox");
+        const randomIndex = Math.floor(Math.random() * randomQuestions.length);
+        box.textContent = randomQuestions[randomIndex];
+    }
+
+    // Show answer for featured question
+    function showAnswer() {
+        const answer = document.getElementById("featuredAnswer");
+        if(answer.style.display === "none"){
+            answer.style.display = "block";
+        } else {
+            answer.style.display = "none";
+        }
+    }
+</script>
+
+</body>
+  </html>
